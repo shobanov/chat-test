@@ -1,0 +1,27 @@
+.messageField {
+  flex: 0 0 auto;
+  min-height: 69px;
+  max-width: 1440px;
+  position: relative;
+}
+
+.messageField textarea {
+  background-color: #3A3A3A;
+  width: 100%;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  resize: none;
+  color: #D1D1D1;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 32px;
+  padding: 20px 60px 17px 27px;
+}
+
+.messageField img {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
