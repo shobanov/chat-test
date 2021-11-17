@@ -20,7 +20,10 @@
   padding: 20px 60px 17px 27px;
 }
 
-.messageField img {
+.messageField button {
+  border: none;
+  outline: none;
+  background: transparent;
   position: absolute;
   right: 20px;
   bottom: 20px;

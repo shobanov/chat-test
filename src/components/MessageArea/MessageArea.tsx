@@ -7,9 +7,6 @@ const MessageArea = () => {
       <Message />
       <Message />
       <Message />
-      <Message />
-      <Message />
-      <Message />
     </div>
   );
 };
