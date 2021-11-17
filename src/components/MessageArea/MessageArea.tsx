@@ -24,7 +24,7 @@ const MessageArea: React.FC = () => {
         yourMessages.map((item, index) => {
           return (
             <div key={index}>
-              <Message message={item.message}/>
+              <Message message={item.message} date={item.date}/>
             </div>
           )
         })
@@ -33,7 +33,7 @@ const MessageArea: React.FC = () => {
         receivedMessages.map((item, index) => {
           return (
             <div key={index}>
-              <ReceivedMessage message={item.message}/>
+              <ReceivedMessage message={item.message} date={item.date} />
             </div>
           )
         })

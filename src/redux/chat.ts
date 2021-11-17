@@ -9,9 +9,8 @@ const createDate = () => {
   const date = new Date();
 
   const formatter = new Intl.DateTimeFormat("en-US",{
-    year: "numeric",
-    month: "short",
-    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
   });
 
   return formatter.format(date);
@@ -24,7 +23,10 @@ export const chatReducer = (state: InitialStateType = initialState, action: Acti
         ...state,
         yourMessages: [
           ...state.yourMessages, 
-          { message: action.payload }
+          {
+            message: action.payload,
+            date: createDate()
+          }
         ]
       };
     case 'ADD-RECEIVED-MESSAGE': 
@@ -32,7 +34,10 @@ export const chatReducer = (state: InitialStateType = initialState, action: Acti
         ...state,
         receivedMessages: [
           ...state.receivedMessages, 
-          { message: action.payload }
+          {
+            message: action.payload,
+            date: createDate()
+          }
         ]
       };
     default:
@@ -52,6 +57,7 @@ export type InitialStateType = {
 
 export type MessageType = {
   message: string;
+  date: string;
 };
 
 type ActionsType = 

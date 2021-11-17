@@ -2,14 +2,15 @@ import styles from './ReceivedMessage.module.css';
 
 type ReceivedMessagePropsType = {
   message: string;
+  date: string;
 };
 
-const ReceivedMessage: React.FC<ReceivedMessagePropsType> = ({ message }) => {
+const ReceivedMessage: React.FC<ReceivedMessagePropsType> = ({ message, date }) => {
   return (
     <div className={styles.sentMessage}>
       <div className={styles.content}>
         <p className={styles.text}>{message}</p>
-        <span className={styles.time}>21:30 PM</span>
+        <span className={styles.time}>{date}</span>
       </div>
     </div>
   );
