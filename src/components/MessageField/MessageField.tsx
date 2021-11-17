@@ -6,8 +6,9 @@ import { addYourMessageAC } from '../../redux/chat';
 import sendFill from '../../img/send-fill.svg';
 import send from '../../img/send.svg';
 import styles from './MessageField.module.css';
+import { ws } from '../../websocket';
 
-const MessageField = () => {
+const MessageField: React.FC = () => {
   const [value, setValue] = useState('');
   const dispatch = useDispatch();
 
@@ -18,6 +19,7 @@ const MessageField = () => {
   const sendButtonHandler = () => {
     if (value.trim() !== '') {
       dispatch(addYourMessageAC(value.trim()));
+      ws.send(value.trim())
       setValue('');
     };
   };
