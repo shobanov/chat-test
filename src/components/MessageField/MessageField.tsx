@@ -1,54 +1,57 @@
 import { useDispatch } from 'react-redux';
 import { ChangeEvent, useState } from 'react';
-import TextareaAutosize from 'react-textarea-autosize';
 
-import { addYourMessageAC } from '../../redux/chat';
-import sendFill from '../../img/send-fill.svg';
-import send from '../../img/send.svg';
+import { addMessageAC } from '../../redux/chat';
+import sendFill from '../../img/send-fill.png';
+import send from '../../img/send.png';
 import styles from './MessageField.module.css';
 import { ws } from '../../websocket';
+import { Field, Form, Formik, FormikProps, FormikValues } from 'formik';
+import { type } from 'os';
+
+type InitialStateType = {
+  message: string
+}
 
 const MessageField: React.FC = () => {
-  const [value, setValue] = useState('');
   const dispatch = useDispatch();
 
-  const textareaOnChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setValue(e.target.value);
-  };
+  const initialValues = { 
+    message: ''
+  }
 
-  const sendButtonHandler = () => {
-    if (value.trim() !== '') {
-      dispatch(addYourMessageAC(value.trim()));
-      ws.send(value.trim())
-      setValue('');
-    };
-  };
+  // const sendButtonHandler = () => {
+  //   if (value.trim() !== '') {
+  //     dispatch(addMessageAC(value.trim()));
+  //     ws.send(value.trim())
+  //     setValue('');
+  //   };
+  // };
 
   const onPressEnterHandler = (e: React.KeyboardEvent) => {
     if(e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      sendButtonHandler();
     };
   };
+
+  const handleSubmit = (values: InitialStateType, actions: { resetForm: () => void; }) => {
+    dispatch(addMessageAC(values.message));
+    actions.resetForm();
+  }
   
   return (
-    <div className={styles.messageField}>
-      {
-        value ?
-        <button>
-          <img src={sendFill} alt="send-fill" onClick={sendButtonHandler} />
-        </button> :
-        <button>
-          <img src={send} alt="send" />
-        </button>
-      }
-      <TextareaAutosize
-        value={value}
-        placeholder='Enter text message...'
-        onKeyPress={onPressEnterHandler}
-        onChange={textareaOnChangeHandler}
-      />
-    </div>
+    
+    <Formik className={styles.messageField} initialValues={initialValues} onSubmit={handleSubmit}>
+      <Form onKeyDown={onPressEnterHandler}>
+        <Field className={styles.textarea} name="message" as="textarea">
+          <input
+            type="text"
+            placeholder='Enter text message...'
+          />
+        </Field>
+        <input className={styles.img} type="image" name="image" src={send} width="35px"/>
+      </Form>
+    </Formik>
   );
 };
 

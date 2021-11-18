@@ -6,11 +6,9 @@ import MessageArea from "./components/MessageArea/MessageArea";
 const App = () => {
   return (
     <div className={styles.app}>
-      <div className={styles.wrapper}>
-        <Header />
-        <MessageArea />
-        <MessageField />
-      </div>
+      <Header />
+      <MessageArea />
+      <MessageField />
     </div>
   );
 };

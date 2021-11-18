@@ -5,7 +5,7 @@
   position: relative;
 }
 
-.messageField textarea {
+.textarea {
   background-color: #3A3A3A;
   width: 100%;
   border: none;
@@ -20,7 +20,7 @@
   padding: 20px 60px 17px 27px;
 }
 
-.messageField button {
+.img {
   border: none;
   outline: none;
   background: transparent;

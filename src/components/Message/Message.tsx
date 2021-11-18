@@ -1,5 +1,5 @@
 import styles from './Message.module.css';
-import avatar from '../../img/avatar.svg';
+import avatar from '../../img/avatar.png';
 
 type MessagePropsType = {
   message: string;
@@ -9,7 +9,7 @@ type MessagePropsType = {
 const Message: React.FC<MessagePropsType> = ({ message, date }) => {
   return (
     <div className={styles.message}>
-      <img src={avatar} alt="avatar" height='45px' width='45px'/>
+      <img src={avatar} alt="avatar" width='45px'/>
       <div className={styles.content}>
         <span className={styles.name}>Ilon Mask</span>
         <p className={styles.text}>{message}</p>
