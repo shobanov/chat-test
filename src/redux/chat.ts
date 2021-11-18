@@ -1,19 +1,11 @@
+import { format } from "date-fns";
+import { enUS } from "date-fns/locale";
+
 const initialState: InitialStateType = {
   messages: [],
 };
 
-const createDate = () => {
-  const date = new Date();
-
-  
-
-  const formatter = new Intl.DateTimeFormat("en-US",{
-    hour: "numeric",
-    minute: "numeric",
-  });
-
-  return formatter.format(date);
-};
+const date = (format(new Date(), "HH':'mm a", { locale: enUS }));
 
 export const chatReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
   switch (action.type) {
@@ -24,7 +16,7 @@ export const chatReducer = (state: InitialStateType = initialState, action: Acti
           ...state.messages, 
           {
             message: action.payload,
-            date: createDate()
+            date: action.date,
           }
         ]
       };
@@ -34,7 +26,7 @@ export const chatReducer = (state: InitialStateType = initialState, action: Acti
 };
 
 // action
-export const addMessageAC = (payload: string) => ({ type: 'ADD-MESSAGE', payload } as const);
+export const addMessageAC = (payload: string) => ({ type: 'ADD-MESSAGE', payload, date } as const);
 
 // types
 export type InitialStateType = {
