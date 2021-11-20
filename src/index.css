@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 
 body {
-  background-color: #E5E5E5;
   margin: 0;
   font-family: 'Inter';
   -webkit-font-smoothing: antialiased;
@@ -15,6 +14,11 @@ code {
 
 button,
 textarea,
-select {
+select,
+p,
+input,
+span,
+h2,
+::placeholder {
   font: inherit;
 }
