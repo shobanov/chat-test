@@ -3,83 +3,8 @@ import { Form, Field, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 
-import styled from 'styled-components';
-import { NameType, saveNameAC } from '../redux/chat';
-
-// styles
-const AuthContainer = styled.div`
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  background-color: #252527;
-`;
-
-const AuthWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 300px;
-  margin: 0 auto;
-  @media (max-width: 480px) {
-    width: 300px;
-  }
-`;
-
-const Title = styled.h2`
-  text-align: center;
-  color: aliceblue;
-  margin-bottom: 30px;
-`;
-
-const FormBox = styled.form`
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  height: 100%;
-  margin: auto 15px;
-  text-align: center;
-  position: relative;
-  & #secondInput {
-      margin-top: 15px;
-  };
-  #firstError {
-    top: 26px;
-  };
-  #secondError {
-    top: 80px;
-  };
-`;
-
-const Input = styled.input`
-  height: 35px;
-  border-radius: 10px;
-  padding-left: 15px;
-  font-size: 90%;
-  border: 1px solid;
-  outline: none;
-`;
-
-const Button = styled.button`
-  height: 35px;
-  width: 30%;
-  border-radius: 8px;
-  margin-top: 15px;
-  font-size: 90%;
-  border: 1px solid;
-  margin: 0 auto;
-  margin-top: 20px;
-  font-weight: 500;
-`;
-
-const ErrorMessage = styled.p`
-  color: red;
-  position: absolute;
-  font-size: 12px;
-  font-weight: 200;
-  background: transparent;
-  border: none;
-  left: 5px;
-`;
+import { NameType, saveNameAC } from '../../redux/chat';
+import { AuthContainer, AuthWrapper, Button, ErrorMessage, FormContainer, Input, Title } from './AuthStyles';
 
 // validation 
 const ValidationSchema = Yup.object().shape({
@@ -108,9 +33,8 @@ const Auth: React.FC = () => {
         {({ errors, touched }) => (
           <AuthWrapper>
             <Title>Enter your first and last name to enter the chat</Title>
-            <FormBox as={Form}>
+            <FormContainer as={Form}>
               <Input
-                as={Field}
                 type="text"
                 name="firstName"
                 placeholder="First name"
@@ -122,7 +46,6 @@ const Auth: React.FC = () => {
               }
               <Input
                 id="secondInput"
-                as={Field}
                 type="text"
                 name="lastName"
                 placeholder="Last name"
@@ -135,7 +58,7 @@ const Auth: React.FC = () => {
               <Button type="submit">
                 Entry
               </Button>
-            </FormBox>
+            </FormContainer>
           </AuthWrapper >
         )}
       </Formik >
