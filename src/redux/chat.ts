@@ -3,6 +3,8 @@ import { enUS } from "date-fns/locale";
 
 const initialState: InitialStateType = {
   messages: [],
+  firstName: '',
+  lastName: '',
 };
 
 const date = (format(new Date(), "HH':'mm a", { locale: enUS }));
@@ -20,6 +22,12 @@ export const chatReducer = (state: InitialStateType = initialState, action: Acti
           }
         ]
       };
+    case 'SAVE-NAME':
+      return {
+        ...state,
+        firstName: action.payload.firstName,
+        lastName: action.payload.lastName,
+      }; 
     default:
       return state;    
   };
@@ -27,10 +35,13 @@ export const chatReducer = (state: InitialStateType = initialState, action: Acti
 
 // action
 export const addMessageAC = (payload: string) => ({ type: 'ADD-MESSAGE', payload, date } as const);
+export const saveNameAC = (payload: NameType) => ({ type: 'SAVE-NAME', payload} as const);
 
 // types
 export type InitialStateType = {
   messages: MessageType[],
+  firstName: string;
+  lastName: string;
 };
 
 export type MessageType = {
@@ -38,4 +49,11 @@ export type MessageType = {
   date: string;
 };
 
-type ActionsType = ReturnType <typeof addMessageAC>
+export type NameType = {
+  firstName: string;
+  lastName: string;
+};
+
+type ActionsType = 
+ | ReturnType <typeof addMessageAC>
+ | ReturnType <typeof saveNameAC>;

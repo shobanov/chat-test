@@ -2,12 +2,7 @@ import { Form, Field, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import * as Yup from 'yup';
-
-// types
-type initialValuesType = {
-  firstName: string;
-  lastName: string;
-};
+import { NameType, saveNameAC } from '../redux/chat';
 
 // styles
 const AuthContainer = styled.div`
@@ -97,12 +92,11 @@ const ValidationSchema = Yup.object().shape({
 });
 
 const Auth: React.FC = () => {
-  
   const dispatch = useDispatch();
 
-  function onSubmit(values: initialValuesType) {
-    console.log(values.firstName)
-  }
+  function onSubmit(values: NameType) {
+    dispatch(saveNameAC(values));
+  };
 
   return (
     <AuthContainer>
