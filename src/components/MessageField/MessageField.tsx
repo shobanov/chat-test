@@ -1,32 +1,22 @@
+import { Field, Form, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
-import { ChangeEvent, useState } from 'react';
 
+// import { ws } from '../../websocket';
 import { addMessageAC } from '../../redux/chat';
-import sendFill from '../../img/send-fill.png';
+// import sendFill from '../../img/send-fill.png';
 import send from '../../img/send.png';
 import styles from './MessageField.module.css';
-import { ws } from '../../websocket';
-import { Field, Form, Formik, FormikProps, FormikValues } from 'formik';
-import { type } from 'os';
 
 type InitialStateType = {
-  message: string
-}
+  message: string;
+};
 
 const MessageField: React.FC = () => {
   const dispatch = useDispatch();
 
   const initialValues = { 
-    message: ''
-  }
-
-  // const sendButtonHandler = () => {
-  //   if (value.trim() !== '') {
-  //     dispatch(addMessageAC(value.trim()));
-  //     ws.send(value.trim())
-  //     setValue('');
-  //   };
-  // };
+    message: '',
+  };
 
   const onPressEnterHandler = (e: React.KeyboardEvent) => {
     if(e.key === 'Enter' && !e.shiftKey) {
@@ -37,10 +27,9 @@ const MessageField: React.FC = () => {
   const handleSubmit = (values: InitialStateType, actions: { resetForm: () => void; }) => {
     dispatch(addMessageAC(values.message));
     actions.resetForm();
-  }
+  };
   
   return (
-    
     <Formik className={styles.messageField} initialValues={initialValues} onSubmit={handleSubmit}>
       <Form onKeyDown={onPressEnterHandler}>
         <Field className={styles.textarea} name="message" as="textarea">
@@ -49,7 +38,7 @@ const MessageField: React.FC = () => {
             placeholder='Enter text message...'
           />
         </Field>
-        <input className={styles.img} type="image" name="image" src={send} width="35px"/>
+        <input className={styles.img} alt="img" type="image" src={send} width="35px"/>
       </Form>
     </Formik>
   );

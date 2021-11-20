@@ -7,24 +7,31 @@ import ReceivedMessage from '../ReceivedMessage/ReceivedMessage';
 import styles from './MessageArea.module.css';
 
 const MessageArea: React.FC = () => {
-  const AllMessages = useSelector<AppRootStateType, Array<MessageType>>(state => state.chat.messages);
+  const allMessages = useSelector<AppRootStateType, Array<MessageType>>(state => state.chat.messages);
+  const yourName = useSelector<AppRootStateType>(state => state.chat.firstName);
   const dispatch = useDispatch();
 
   ws.onmessage = (e) => {
     dispatch(addMessageAC(e.data));
     console.log(e.data);
   };
+  
 
   return (
     <div className={styles.messageArea}>
       {
-        AllMessages.map((item, index) => {
+        allMessages.map((item, index) => {
           return (
+            item.firstName === yourName ? 
             <div key={index}>
               <Message message={item.message} date={item.date}/>
-              
+            </div>
+            :
+            <div key={index}>
+              <ReceivedMessage message={item.message} date={item.date} />
             </div>
           )
+
         })
       }
     </div>
@@ -32,5 +39,3 @@ const MessageArea: React.FC = () => {
 };
 
 export default MessageArea;
-
-// <ReceivedMessage message={item.message} date={item.date} />

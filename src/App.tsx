@@ -1,19 +1,23 @@
-import Header from "./components/Header/Header";
-import MessageField from "./components/MessageField/MessageField";
 import styles from './App.module.css';
-import MessageArea from "./components/MessageArea/MessageArea";
 import Auth from "./components/Auth";
-
-
+import Chat from "./components/Chat";
+import { Route, Redirect, Switch } from "react-router-dom";
 
 const App = () => {
   return (
-    // <div className={styles.app}>
-    //   <Header />
-    //   <MessageArea />
-    //   <MessageField />
-    // </div>
-      <Auth />
+    <div className={styles.app}>
+      <Route path='/'>
+        <Redirect to='/auth' />
+      </Route>
+      <Switch>
+        <Route path='/auth'>
+          <Auth />
+        </Route>
+        <Route path='/chat'>
+          <Chat />
+        </Route>
+      </Switch>
+    </div>
   );
 };
 

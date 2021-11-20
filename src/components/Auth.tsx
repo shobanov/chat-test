@@ -1,7 +1,9 @@
+import { useHistory } from 'react-router-dom';
 import { Form, Field, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
-import styled from 'styled-components';
 import * as Yup from 'yup';
+
+import styled from 'styled-components';
 import { NameType, saveNameAC } from '../redux/chat';
 
 // styles
@@ -93,14 +95,16 @@ const ValidationSchema = Yup.object().shape({
 
 const Auth: React.FC = () => {
   const dispatch = useDispatch();
+  const history = useHistory()
 
-  function onSubmit(values: NameType) {
+  function handleSubmit(values: NameType) {
     dispatch(saveNameAC(values));
+    history.push('/chat');
   };
 
   return (
     <AuthContainer>
-      <Formik initialValues={ {firstName: '', lastName: ''} } onSubmit={onSubmit} validationSchema={ValidationSchema}>
+      <Formik initialValues={ {firstName: '', lastName: ''} } onSubmit={handleSubmit} validationSchema={ValidationSchema}>
         {({ errors, touched }) => (
           <AuthWrapper>
             <Title>Enter your first and last name to enter the chat</Title>

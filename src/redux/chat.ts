@@ -19,6 +19,7 @@ export const chatReducer = (state: InitialStateType = initialState, action: Acti
           {
             message: action.payload,
             date: action.date,
+            firstName: state.firstName,
           }
         ]
       };
@@ -46,6 +47,7 @@ export type InitialStateType = {
 
 export type MessageType = {
   message: string;
+  firstName: string;
   date: string;
 };
 
