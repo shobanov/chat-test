@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 
-import avatar from '../assets/images/avatar.png';
-import { AppRootStateType } from '../redux/store';
-import { UserAvatar, UserNameTitle, HeaderContainer } from './HeaderStyles';
+import avatar from '../../../assets/images/avatar.png';
+import { AppRootStateType } from '../../../redux/store';
+import { UserAvatar, UserName, HeaderContainer } from './HeaderStyles';
 
 const Header: React.FC = () => {
   const userFirstName = useSelector<AppRootStateType, string>(state => state.chat.firstName);
@@ -11,9 +11,9 @@ const Header: React.FC = () => {
   return (
     <HeaderContainer>
       <UserAvatar src={avatar} alt="avatar"/>
-      <UserNameTitle>
+      <UserName>
         {userFirstName + ' ' + userLastName}
-      </UserNameTitle>
+      </UserName>
     </HeaderContainer>
   );
 };

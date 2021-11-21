@@ -1,11 +1,12 @@
-import styles from './App.module.css';
-import Auth from "./pages/auth/Auth";
-import Chat from "./pages/chat/Chat";
 import { Route, Redirect, Switch } from "react-router-dom";
 
-const App = () => {
+import Auth from "./pages/auth/Auth";
+import Chat from "./pages/chat/Chat";
+import { AppContainer } from './AppStyles';
+
+const App: React.FC = () => {
   return (
-    <div className={styles.app}>
+    <AppContainer>
       <Route path='/'>
         <Redirect to='/auth' />
       </Route>
@@ -17,7 +18,7 @@ const App = () => {
           <Chat />
         </Route>
       </Switch>
-    </div>
+    </AppContainer>
   );
 };
 

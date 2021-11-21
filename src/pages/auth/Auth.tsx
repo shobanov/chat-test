@@ -1,26 +1,19 @@
 import { useHistory } from 'react-router-dom';
-import { Form, Field, Formik } from 'formik';
+import { Form, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
-import * as Yup from 'yup';
 
 import { NameType, saveNameAC } from '../../redux/chat';
 import { AuthContainer, AuthWrapper, Button, ErrorMessage, FormContainer, Input, Title } from './AuthStyles';
+import { ValidationSchema } from './validation';
 
-// validation 
-const ValidationSchema = Yup.object().shape({
-  firstName: Yup.string()
-    .min(2, 'First name too short')
-    .max(20, 'First name too short')
-    .required('First name required'),
-  lastName: Yup.string()
-    .min(2, 'Last name too short')
-    .max(20, 'Last name too long')
-    .required('Last name required'),
-});
+const INITIAL_VALUES = {
+  firstName: '',
+  lastName: '',
+};
 
 const Auth: React.FC = () => {
   const dispatch = useDispatch();
-  const history = useHistory()
+  const history = useHistory();
 
   function handleSubmit(values: NameType) {
     dispatch(saveNameAC(values));
@@ -29,7 +22,7 @@ const Auth: React.FC = () => {
 
   return (
     <AuthContainer>
-      <Formik initialValues={ {firstName: '', lastName: ''} } onSubmit={handleSubmit} validationSchema={ValidationSchema}>
+      <Formik initialValues={INITIAL_VALUES} onSubmit={handleSubmit} validationSchema={ValidationSchema}>
         {({ errors, touched }) => (
           <AuthWrapper>
             <Title>Enter your first and last name to enter the chat</Title>

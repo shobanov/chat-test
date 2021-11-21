@@ -1,6 +1,6 @@
-import Header from "../../components/Header";
-import MessageArea from "../../components/MessageArea";
-import EntryField from "../../components/EntryField";
+import Header from "./header/Header";
+import MessageArea from "./messageArea/MessageArea";
+import EntryField from "./entryField/EntryField";
 
 const Chat: React.FC = () => {
   return (

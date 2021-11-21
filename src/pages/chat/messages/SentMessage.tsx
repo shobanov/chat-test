@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import avatar from '../../../assets/images/avatar.png';
 import { AppRootStateType } from '../../../redux/store';
-import { Content, SentMessageWrapper, UserName, Text, Time } from './SentMessageStyles';
+import { Content, SentMessageContainer, UserName, Text, Time, UserAvatar } from './SentMessageStyles';
 
 type MessagePropsType = {
   message: string;
@@ -10,15 +10,15 @@ type MessagePropsType = {
 };
 
 const Message: React.FC<MessagePropsType> = ({ message, date }) => {
-  const yourFirstName = useSelector<AppRootStateType, string>(state => state.chat.firstName);
-  const yourLastName = useSelector<AppRootStateType, string>(state => state.chat.lastName);
-  
+  const userFirstName = useSelector<AppRootStateType, string>(state => state.chat.firstName);
+  const userLastName = useSelector<AppRootStateType, string>(state => state.chat.lastName);
+
   return (
-    <SentMessageWrapper>
-      <img src={avatar} alt="avatar" width="45px"/>
+    <SentMessageContainer>
+      <UserAvatar src={avatar} alt="avatar"/>
       <Content>
         <UserName>
-          {yourFirstName + ' ' + yourLastName}
+          {userFirstName + ' ' + userLastName}
         </UserName>
         <Text>
           {message}
@@ -27,7 +27,7 @@ const Message: React.FC<MessagePropsType> = ({ message, date }) => {
           {date}
         </Time>
       </Content>
-    </SentMessageWrapper>
+    </SentMessageContainer>
   );
 };
 

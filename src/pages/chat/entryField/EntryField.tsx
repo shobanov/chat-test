@@ -1,9 +1,9 @@
 import { Form, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 
-import { addMessageAC } from '../redux/chat';
-import send from '../assets/images/send.png';
-import { ButtonImageType, EntryFieldWrapper, Textarea } from './EntryFieldStyles';
+import { addMessageAC } from '../../../redux/chat';
+import send from '../../../assets/images/send.png';
+import { ImageButton, EntryFieldContainer, Textarea } from './EntryFieldStyles';
 
 type InitialStateType = {
   message: string;
@@ -28,21 +28,21 @@ const EntryField: React.FC = () => {
   };
   
   return (
-    <EntryFieldWrapper>
+    <EntryFieldContainer>
       <Formik
         initialValues={INITIAL_VALUES}
         onSubmit={handleSubmit}
       >
         <Form onKeyDown={onPressEnterHandler}>
           <Textarea name="message" as="textarea" placeholder='Enter text message...' />
-          <ButtonImageType
+          <ImageButton
             alt="send"
             type="image"
             src={send}
           />
         </Form>
       </Formik>
-    </EntryFieldWrapper>  
+    </EntryFieldContainer>  
   );
 };
 

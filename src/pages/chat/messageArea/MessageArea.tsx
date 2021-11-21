@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addMessageAC, MessageType } from '../redux/chat';
-import { AppRootStateType } from '../redux/store';
-import { ws } from '../websocket';
-import SentMessage from '../pages/chat/messages/SentMessage';
-import ReceivedMessage from '../pages/chat/messages/ReceivedMessage';
+import { addMessageAC, MessageType } from '../../../redux/chat';
+import { AppRootStateType } from '../../../redux/store';
+import { ws } from '../../../api/websocket';
+import SentMessage from '../messages/SentMessage';
+import ReceivedMessage from '../messages/ReceivedMessage';
 import { MessageAreaContainer } from './MessageAreaStyles';
 
 const MessageArea: React.FC = () => {

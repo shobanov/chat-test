@@ -13,7 +13,7 @@ export const UserAvatar = styled.img`
   height: 45px;
 `;
 
-export const UserNameTitle = styled.span`
+export const UserName = styled.span`
   color: #D9D9D9;
   width: 50%;
   position: absolute;
