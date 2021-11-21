@@ -1,36 +1,33 @@
-import { Field } from 'formik';
+import { Field, Form } from 'formik';
 import styled from 'styled-components';
 
-export const EntryFieldContainer = styled.div`
-  flex: 0 0 auto;
-  min-height: 69px;
-  max-width: 1440px;
+export const FormContainer = styled(Form)`
+  width: 100%;
+  height: 69px;
+  position: fixed;
+  bottom: 0;
+`;
+
+export const Textarea = styled(Field)`
+  box-sizing: border-box;
+  height: 69px;
+  width: 100%;
+  background-color: #3A3A3A;
+  outline: none;
+  border: none;
+  resize: none;
+  color: #D1D1D1;
+  font-weight: 300;
+  font-size: 26px;
+  padding: 18px 60px 20px 20px;
   position: relative;
 `;
 
 export const ImageButton = styled.input`
-  border: none;
-  outline: none;
-  background: transparent;
   position: absolute;
   right: 20px;
-  bottom: 20px;
+  bottom: 15px;
   width: 35px;
-`;
-
-export const Textarea = styled(Field)`
-  background-color: #3A3A3A;
-  width: 100%;
-  border: none;
-  outline: none;
-  overflow: hidden;
-  resize: none;
-  color: #D1D1D1;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 26px;
-  line-height: 32px;
-  padding: 20px 60px 17px 27px;
 `;
 
 export const Input = styled.input``;

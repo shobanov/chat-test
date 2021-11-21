@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { addMessageAC } from '../../../redux/chat';
 import send from '../../../assets/images/send.png';
-import { ImageButton, EntryFieldContainer, Textarea } from './EntryFieldStyles';
+import { ImageButton, Textarea, FormContainer } from './EntryFieldStyles';
 
 type InitialStateType = {
   message: string;
@@ -28,21 +28,19 @@ const EntryField: React.FC = () => {
   };
   
   return (
-    <EntryFieldContainer>
       <Formik
         initialValues={INITIAL_VALUES}
         onSubmit={handleSubmit}
       >
-        <Form onKeyDown={onPressEnterHandler}>
+        <FormContainer onKeyDown={onPressEnterHandler}>
           <Textarea name="message" as="textarea" placeholder='Enter text message...' />
           <ImageButton
             alt="send"
             type="image"
             src={send}
           />
-        </Form>
+        </FormContainer>
       </Formik>
-    </EntryFieldContainer>  
   );
 };
 

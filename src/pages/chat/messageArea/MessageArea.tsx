@@ -11,9 +11,9 @@ const MessageArea: React.FC = () => {
   const userFirstName = useSelector<AppRootStateType>(state => state.chat.firstName);
   const dispatch = useDispatch();
 
-  ws.onmessage = (e) => {
-    dispatch(addMessageAC(e.data));
-  };
+  // ws.onmessage = (e) => {
+  //   dispatch(addMessageAC(e.data));
+  // };
   
   return (
     <MessageAreaContainer>

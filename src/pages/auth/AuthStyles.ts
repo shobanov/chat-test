@@ -4,8 +4,8 @@ import styled from 'styled-components';
 export const AuthContainer = styled.div`
   display: flex;
   align-items: center;
-  height: 100vh;
   background-color: #252527;
+  height: 100vh;
 `;
 
 export const AuthWrapper = styled.div`
