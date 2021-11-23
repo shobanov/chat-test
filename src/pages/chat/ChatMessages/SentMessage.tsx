@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 
-import avatar from '../../../assets/images/avatar.png';
+import { Avatar } from '../../../components/Avatar/Avatar';
 import { Time } from '../../../components/Time/Time';
 import { AppRootStateType } from '../../../redux/store';
-import { Content, SentMessageContainer, UserName, Text, UserAvatar } from './SentMessageStyles';
+import { Content, SentMessageContainer, UserName, Text } from './SentMessageStyles';
 
 type MessagePropsType = {
   message: string;
@@ -16,7 +16,7 @@ export const SentMessage: React.FC<MessagePropsType> = ({ message, time }) => {
 
   return (
     <SentMessageContainer>
-      <UserAvatar src={avatar} alt="avatar"/>
+      <Avatar size="60px"/>
       <Content>
         <UserName>
           {userFirstName + ' ' + userLastName}

@@ -34,7 +34,3 @@ export const Text = styled.p`
   word-wrap: break-word;
   color: #ECECEC;
 `;
-
-export const UserAvatar = styled.img`
-  width: 45px;
-`;

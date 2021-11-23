@@ -1,10 +1,10 @@
 import { TimeStyled } from "./styles";
 
-type ReceivedMessagePropsType = {
+type TimePropsType = {
   time: string;
 };
 
-export const Time: React.FC<ReceivedMessagePropsType> = ({ time }) => {
+export const Time: React.FC<TimePropsType> = ({ time }) => {
   return (
     <>
       <TimeStyled>{time}</TimeStyled>
