@@ -3,7 +3,7 @@ import { Form, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 
 import { NameType, saveNameAC } from '../../redux/chat';
-import { AuthContainer, AuthWrapper, Button, ErrorMessage, FormContainer, Input, Title } from './AuthStyles';
+import { AuthContainer, AuthWrapper, Button, ErrorMessage, FormContainer, Input, Title } from './styles';
 import { ValidationSchema } from './validation';
 
 const INITIAL_VALUES = {
@@ -11,7 +11,7 @@ const INITIAL_VALUES = {
   lastName: '',
 };
 
-const Auth: React.FC = () => {
+export const Auth: React.FC = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -58,5 +58,3 @@ const Auth: React.FC = () => {
     </AuthContainer>
   );
 };
-
-export default Auth;

@@ -1,15 +1,35 @@
-import Header from "./header/Header";
-import MessageArea from "./messageArea/MessageArea";
-import EntryField from "./entryField/EntryField";
+import { Formik } from 'formik';
+import { useDispatch } from 'react-redux';
 
-const Chat: React.FC = () => {
+import { addMessageAC } from '../../redux/chat';
+
+import { Header } from "./ChatHeader/Header";
+import { MessageArea } from "./ChatMessageArea/MessageArea";
+import { ChatControls } from "./ChatControls/ChatControls";
+
+const INITIAL_VALUES = {
+  message: '',
+};
+
+export const Chat: React.FC = () => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = (values: typeof INITIAL_VALUES, actions: { resetForm: () => void }) => {
+    console.log(values);
+    dispatch(addMessageAC(values.message));
+    actions.resetForm();
+  };
+
   return (
     <>
       <Header />
       <MessageArea />
-      <EntryField />
+      <Formik
+        initialValues={INITIAL_VALUES}
+        onSubmit={handleSubmit}
+      >
+        <ChatControls />
+      </Formik>
     </>
   );
 };
-
-export default Chat;

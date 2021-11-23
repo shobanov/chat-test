@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const ReceivedMessageContainer = styled.div`
-  margin: 0 28px 9px 28px;
   display: flex;
   justify-content: end;
+  margin: 0 28px 9px 28px;
 `;
 
 export const Content = styled.div`

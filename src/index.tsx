@@ -2,17 +2,16 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from './App';
+import { App } from './App';
 import { store } from './redux/store';
 import reportWebVitals from './common/reportWebVitals';
-import './index.css';
 
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
       <App />
-    </Provider>
-  </BrowserRouter>,document.getElementById('root')
+    </Provider>            
+  </BrowserRouter>, document.getElementById('root')
 );
 
 reportWebVitals();

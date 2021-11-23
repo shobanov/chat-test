@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
 export const MessageAreaContainer = styled.div`
-  padding-bottom: 69px;
-  padding-top: 10px;
+  padding: 10px 0 69px 0;
 `;
