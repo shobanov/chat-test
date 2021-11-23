@@ -25,11 +25,3 @@ export const Text = styled.p`
   word-wrap: break-word;
   color: #FFFFFF;
 `;
-
-export const Time = styled.span`
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  width: 79px;
-  color: #DFDFDF;
-`;

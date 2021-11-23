@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addMessageAC, MessageType } from '../../../redux/chat';
 import { AppRootStateType } from '../../../redux/store';
 import { ws } from '../../../api/websocket';
-import SentMessage from '../ChatMessages/SentMessage';
-import ReceivedMessage from '../ChatMessages/ReceivedMessage';
+import { SentMessage } from '../ChatMessages/SentMessage';
+import { ReceivedMessage } from '../ChatMessages/ReceivedMessage';
 import { MessageAreaContainer } from './Styles';
 
 export const MessageArea: React.FC = () => {
@@ -24,13 +24,13 @@ export const MessageArea: React.FC = () => {
             <SentMessage
               key={index}
               message={item.message}
-              date={item.date}
+              time={item.date}
             />
             :
             <ReceivedMessage
               key={index}
               message={item.message}
-              date={item.date}
+              time={item.date}
             />
           )
         })

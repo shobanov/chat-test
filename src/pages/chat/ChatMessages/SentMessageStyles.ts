@@ -7,8 +7,8 @@ export const SentMessageContainer = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 469px;
   max-width: 469px;
+  width: 469px;
   min-height: 76px;
   padding: 10px;
   margin-left: 17px;
@@ -28,19 +28,11 @@ export const UserName = styled.span`
 
 export const Text = styled.p`
   font-style: normal;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 20px;
   line-height: 24px;
   word-wrap: break-word;
   color: #ECECEC;
-`;
-
-export const Time = styled.span`
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  width: 79px;
-  color: #14FF72;
 `;
 
 export const UserAvatar = styled.img`

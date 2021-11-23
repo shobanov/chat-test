@@ -1,15 +1,16 @@
 import { useSelector } from 'react-redux';
 
 import avatar from '../../../assets/images/avatar.png';
+import { Time } from '../../../components/Time/Time';
 import { AppRootStateType } from '../../../redux/store';
-import { Content, SentMessageContainer, UserName, Text, Time, UserAvatar } from './SentMessageStyles';
+import { Content, SentMessageContainer, UserName, Text, UserAvatar } from './SentMessageStyles';
 
 type MessagePropsType = {
   message: string;
-  date: string;
+  time: string;
 };
 
-const Message: React.FC<MessagePropsType> = ({ message, date }) => {
+export const SentMessage: React.FC<MessagePropsType> = ({ message, time }) => {
   const userFirstName = useSelector<AppRootStateType, string>(state => state.chat.firstName);
   const userLastName = useSelector<AppRootStateType, string>(state => state.chat.lastName);
 
@@ -20,15 +21,9 @@ const Message: React.FC<MessagePropsType> = ({ message, date }) => {
         <UserName>
           {userFirstName + ' ' + userLastName}
         </UserName>
-        <Text>
-          {message}
-        </Text>
-        <Time>
-          {date}
-        </Time>
+        <Text>{message}</Text>
+        <Time time={time} />
       </Content>
     </SentMessageContainer>
   );
 };
-
-export default Message;
