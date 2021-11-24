@@ -6,19 +6,11 @@ export const HeaderContainer = styled.div`
   position: relative;
 `;
 
-export const UserAvatar = styled.img`
-  margin: 15px 0 15px 28px;
-  width: 45px;
-  height: 45px;
-`;
-
 export const UserName = styled.span`
   color: #D9D9D9;
   position: absolute;
-  top: 20px;
+  top: 18px;
   left: 91px;
-  font-style: normal;
   font-weight: 600;
   font-size: 26px;
-  line-height: 31px;
 `;

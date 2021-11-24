@@ -1,10 +1,9 @@
 import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 
-import { addMessageAC } from '../../redux/chat';
-
 import { Header } from "./ChatHeader/Header";
-import { MessageArea } from "./ChatMessageArea/MessageArea";
+import { addMessageAC } from '../../redux/chat';
+import { Messages } from "./ChatMessages/Messages";
 import { ChatControls } from "./ChatControls/ChatControls";
 
 const INITIAL_VALUES = {
@@ -15,7 +14,6 @@ export const Chat: React.FC = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values: typeof INITIAL_VALUES, actions: { resetForm: () => void }) => {
-    console.log(values);
     dispatch(addMessageAC(values.message));
     actions.resetForm();
   };
@@ -23,7 +21,7 @@ export const Chat: React.FC = () => {
   return (
     <>
       <Header />
-      <MessageArea />
+      <Messages />
       <Formik
         initialValues={INITIAL_VALUES}
         onSubmit={handleSubmit}

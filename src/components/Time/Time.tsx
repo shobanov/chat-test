@@ -2,12 +2,13 @@ import { TimeStyled } from "./styles";
 
 type TimePropsType = {
   time: string;
+  color?: string
 };
 
-export const Time: React.FC<TimePropsType> = ({ time }) => {
+export const Time: React.FC<TimePropsType> = ({ time, color }) => {
   return (
     <>
-      <TimeStyled>{time}</TimeStyled>
+      <TimeStyled color={color}>{time}</TimeStyled>
     </>
   );
 };

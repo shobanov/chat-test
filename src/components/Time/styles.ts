@@ -1,9 +1,14 @@
 import styled from "styled-components";
 
-export const TimeStyled = styled.span`
+interface IProps {
+  color?: string;
+};
+
+export const TimeStyled = styled.span<IProps>`
   position: absolute;
   right: 5px;
   bottom: 5px;
   width: 79px;
-  color: #14FF72;
+  color: ${props => props.color ?
+props.color : "#14FF72"};
 `;

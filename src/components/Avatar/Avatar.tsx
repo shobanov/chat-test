@@ -8,7 +8,7 @@ type AvatarPropsType = {
 export const Avatar: React.FC<AvatarPropsType> = ({ size }) => {
   return (
     <>
-      <AvatarStyled src={avatar} alt="avatar" sizes={size}/>
+      <AvatarStyled src={avatar} alt="avatar" size={size}/>
     </>
   );
 };

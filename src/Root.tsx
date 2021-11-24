@@ -28,6 +28,7 @@ code {
 
 button, textarea, select, p, input, span, h2, ::placeholder {
   font: inherit;
+  margin: 0;
 }
 `;
 
