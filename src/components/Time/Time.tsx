@@ -1,14 +1,14 @@
 import { TimeStyled } from "./styles";
 
-type TimePropsType = {
+interface IProps {
   time: string;
-  color?: string
+  isOwner: boolean;
 };
 
-export const Time: React.FC<TimePropsType> = ({ time, color }) => {
+export const Time: React.FC<IProps> = ({ time, isOwner }) => {
   return (
     <>
-      <TimeStyled color={color}>{time}</TimeStyled>
+      <TimeStyled isOwner={isOwner}>{time}</TimeStyled>
     </>
   );
 };

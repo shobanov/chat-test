@@ -1,12 +1,12 @@
-import { useField } from "formik";
+import { useField } from 'formik';
 
-import { TextareaStyled } from "./styles";
+import { TextareaStyled } from './styles';
 
-type PropsType = {
+interface IProps {
   name: string;
 };
 
-export const Textarea: React.FC<PropsType> = ({ name }) => {
+export const Textarea: React.FC<IProps> = ({ name }) => {
   const [field] = useField(name);
    
   const onChangeHandler = (e: any) => {
@@ -18,7 +18,12 @@ export const Textarea: React.FC<PropsType> = ({ name }) => {
 
   return (
     <>
-      <TextareaStyled {...field} name={name} onKeyUp={onChangeHandler} placeholder='Enter text message...' />
+      <TextareaStyled
+        {...field}
+        name={name}
+        onKeyUp={onChangeHandler}
+        placeholder='Enter text message...'
+      />
     </>
   );
 };

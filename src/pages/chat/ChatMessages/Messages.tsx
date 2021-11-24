@@ -4,15 +4,15 @@ import { ws } from '../../../api/websocket';
 import { MessagesContainer } from './styles';
 import { Message } from './Message/Message';
 import { AppRootStateType } from '../../../redux/store';
-import { addMessageAC, MessageType } from '../../../redux/chat';
+import { addReseivedMessageAC, MessageType } from '../../../redux/chat';
 
 export const Messages: React.FC = () => {
   const allMessages = useSelector<AppRootStateType, Array<MessageType>>(state => state.chat.messages);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // ws.onmessage = (e) => {
-  //   dispatch(addMessageAC(e.data));
-  // };
+  ws.onmessage = (e) => {
+    dispatch(addReseivedMessageAC(JSON.parse(e.data)));
+  };
   
   return (
     <MessagesContainer>

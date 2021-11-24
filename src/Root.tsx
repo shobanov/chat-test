@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle } from 'styled-components';
-// import .. from './assets/'
 
 const StyledRoot = styled.div`
   min-height: 100%;
@@ -24,11 +23,6 @@ html, body, #root {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-button, textarea, select, p, input, span, h2, ::placeholder {
-  font: inherit;
-  margin: 0;
 }
 `;
 

@@ -1,10 +1,10 @@
-import { useHistory } from 'react-router-dom';
-import { Form, Formik } from 'formik';
+import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
+import { ValidationSchema } from './validation';
 import { NameType, saveNameAC } from '../../redux/chat';
 import { AuthContainer, AuthWrapper, Button, ErrorMessage, FormContainer, Input, Title } from './styles';
-import { ValidationSchema } from './validation';
 
 const INITIAL_VALUES = {
   firstName: '',
@@ -26,7 +26,7 @@ export const Auth: React.FC = () => {
         {({ errors, touched }) => (
           <AuthWrapper>
             <Title>Enter your first and last name to enter the chat</Title>
-            <FormContainer as={Form}>
+            <FormContainer>
               <Input
                 type="text"
                 name="firstName"
@@ -34,7 +34,7 @@ export const Auth: React.FC = () => {
               />
               {
                 errors.firstName && touched.firstName ? (
-                  <ErrorMessage id="firstError">{ errors.firstName }</ErrorMessage>
+                  <ErrorMessage id="firstError">{errors.firstName}</ErrorMessage>
                 ) : null
               }
               <Input
@@ -45,7 +45,7 @@ export const Auth: React.FC = () => {
               />
               {
                 errors.lastName && touched.lastName ? (
-                  <ErrorMessage id="secondError">{ errors.lastName }</ErrorMessage>
+                  <ErrorMessage id="secondError">{errors.lastName}</ErrorMessage>
                 ) : null
               }
               <Button type="submit">

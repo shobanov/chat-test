@@ -1,4 +1,4 @@
-import { Field } from 'formik';
+import { Field, Form } from 'formik';
 import styled from 'styled-components';
 
 export const AuthContainer = styled.div`
@@ -25,7 +25,7 @@ export const Title = styled.h2`
   margin-bottom: 30px;
 `;
 
-export const FormContainer = styled.form`
+export const FormContainer = styled(Form)`
   display: flex;
   flex-direction: column;
   width: 80%;
