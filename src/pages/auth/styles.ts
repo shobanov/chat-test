@@ -1,4 +1,4 @@
-import { Field, Form } from 'formik';
+import { Form } from 'formik';
 import styled from 'styled-components';
 
 export const AuthContainer = styled.div`
@@ -34,8 +34,8 @@ export const FormContainer = styled(Form)`
   margin: auto 15px;
   text-align: center;
   position: relative;
-  & #secondInput {
-      margin-top: 15px;
+  & :first-child {
+    margin-bottom: 15px;
   };
   #firstError {
     top: 26px;
@@ -43,23 +43,4 @@ export const FormContainer = styled(Form)`
   #secondError {
     top: 80px;
   };
-`;
-
-export const Input = styled(Field)`
-  height: 35px;
-  border-radius: 10px;
-  padding-left: 15px;
-  font-size: 90%;
-  border: 1px solid;
-  outline: none;
-`;
-
-export const ErrorMessage = styled.p`
-  color: red;
-  position: absolute;
-  font-size: 12px;
-  font-weight: 300;
-  background: transparent;
-  border: none;
-  left: 5px;
 `;
