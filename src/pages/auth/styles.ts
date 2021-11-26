@@ -54,18 +54,6 @@ export const Input = styled(Field)`
   outline: none;
 `;
 
-export const Button = styled.button`
-  height: 35px;
-  width: 30%;
-  border-radius: 8px;
-  margin-top: 15px;
-  font-size: 16px;
-  border: 1px solid;
-  margin: 0 auto;
-  margin-top: 20px;
-  font-weight: 400;
-`;
-
 export const ErrorMessage = styled.p`
   color: red;
   position: absolute;

@@ -4,7 +4,8 @@ import { useHistory } from 'react-router-dom';
 
 import { ValidationSchema } from './validation';
 import { NameType, saveNameAC } from '../../redux/chat';
-import { AuthContainer, AuthWrapper, Button, ErrorMessage, FormContainer, Input, Title } from './styles';
+import { AuthContainer, AuthWrapper, ErrorMessage, FormContainer, Input, Title } from './styles';
+import { Button } from '../../components/Button/Button';
 
 const INITIAL_VALUES = {
   firstName: '',
@@ -48,9 +49,7 @@ export const Auth: React.FC = () => {
                   <ErrorMessage id="secondError">{errors.lastName}</ErrorMessage>
                 ) : null
               }
-              <Button type="submit">
-                Entry
-              </Button>
+              <Button type="submit" content="Entry" />
             </FormContainer>
           </AuthWrapper >
         )}
