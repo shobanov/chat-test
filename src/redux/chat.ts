@@ -7,7 +7,9 @@ const initialState: InitialStateType = {
   lastName: '',
 };
 
-const date = (format(new Date(), "HH':'mm a", { locale: enUS }));
+const getCurrentTime = () => {
+  return (format(new Date(), "HH':'mm a", { locale: enUS }));
+};
 
 export const chatReducer = (
   state: InitialStateType = initialState,
@@ -23,7 +25,7 @@ export const chatReducer = (
             firstName: state.firstName,
             lastName: state.lastName,
             message: action.payload,
-            date: action.date,
+            time: action.time,
           }
         ]
       };
@@ -36,7 +38,7 @@ export const chatReducer = (
               firstName: action.payload.firstName,
               lastName: action.payload.lastName,
               message: action.payload.message,
-              date: action.date,
+              time: action.time,
             }
           ]
         };  
@@ -55,13 +57,13 @@ export const chatReducer = (
 export const addOwnerMessageAC = (payload: string) => ({
   type: 'ADD-OWNER-MESSAGE',
   payload,
-  date,
+  time: getCurrentTime(),
 } as const);
 
 export const addReseivedMessageAC = (payload: MessageType) => ({
   type: 'ADD-RESEIVED-MESSAGE',
   payload,
-  date,
+  time: getCurrentTime(),
 } as const);
 
 export const saveNameAC = (payload: NameType) => ({
@@ -80,7 +82,7 @@ export type MessageType = {
   firstName: string;
   lastName: string;
   message: string;
-  date: string;
+  time: string;
 };
 
 export type NameType = {

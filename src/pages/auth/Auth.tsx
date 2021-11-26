@@ -36,7 +36,7 @@ export const Auth: React.FC = () => {
                 errors.firstName && touched.firstName ? (
                   <ErrorMessage id="firstError">{errors.firstName}</ErrorMessage>
                 ) : null
-              }
+              } 
               <Input
                 id="secondInput"
                 type="text"

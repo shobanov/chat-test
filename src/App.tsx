@@ -8,12 +8,12 @@ export const App: React.FC = () => {
   return (
     <Root>
       <Route path='/'>
-        <Redirect to='/auth' />
+        <Redirect to='/chat' />
       </Route>
       <Switch>
-        <Route path='/auth'>
+        {/* <Route path='/auth'>
           <Auth />
-        </Route>
+        </Route> */}
         <Route path='/chat'>
           <Chat />
         </Route>

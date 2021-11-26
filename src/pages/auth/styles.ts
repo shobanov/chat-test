@@ -23,6 +23,7 @@ export const Title = styled.h2`
   text-align: center;
   color: aliceblue;
   margin-bottom: 30px;
+  font-weight: 300;
 `;
 
 export const FormContainer = styled(Form)`
@@ -58,18 +59,18 @@ export const Button = styled.button`
   width: 30%;
   border-radius: 8px;
   margin-top: 15px;
-  font-size: 90%;
+  font-size: 16px;
   border: 1px solid;
   margin: 0 auto;
   margin-top: 20px;
-  font-weight: 500;
+  font-weight: 400;
 `;
 
 export const ErrorMessage = styled.p`
   color: red;
   position: absolute;
   font-size: 12px;
-  font-weight: 200;
+  font-weight: 300;
   background: transparent;
   border: none;
   left: 5px;

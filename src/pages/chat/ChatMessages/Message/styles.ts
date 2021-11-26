@@ -15,8 +15,7 @@ export const MessageContainer = styled.div<IProps>`
 export const Content = styled.div<IProps>`
   max-width: 449px;
   width: 449px;
-  min-height: 56px;
-  padding: 10px;
+  min-height: 76px;
   margin-left: 17px;
   border-radius: 9px;
   background-color: ${props => props.isOwner ?
@@ -24,11 +23,12 @@ export const Content = styled.div<IProps>`
   position: relative;
 `;
 
-export const UserName = styled.span`
+export const UserName = styled.p`
   color: #ECECEC;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 20px;
-  padding-bottom: 10px;
+  margin-top: 10px;
+  margin: 10px 10px 5px 16px;
 `;
 
 export const Text = styled.p<IProps>`
@@ -37,5 +37,17 @@ export const Text = styled.p<IProps>`
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
+  margin: 0 28px 11px 16px;
   word-wrap: break-word;
+`;
+
+export const Time = styled.span<IProps>`
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 79px;
+  font-size: 17px;
+  font-weight: 300;
+  color: ${props => props.isOwner ?
+"#14FF72" : "#DFDFDF"};
 `;

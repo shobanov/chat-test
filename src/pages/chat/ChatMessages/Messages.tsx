@@ -24,7 +24,7 @@ export const Messages: React.FC = () => {
               firstName={item.firstName}
               lastName={item.lastName}
               message={item.message}
-              time={item.date}
+              time={item.time}
             />
           )
         })

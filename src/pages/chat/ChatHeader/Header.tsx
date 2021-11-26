@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
 
   return (
     <HeaderContainer>
-      <Avatar size="45px"/>
+      <Avatar size="small"/>
       <UserName>
         {userFirstName + ' ' + userLastName}
       </UserName>

@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import './assets/fonts/fonts.css';
 
 const StyledRoot = styled.div`
   min-height: 100%;
@@ -6,19 +7,21 @@ const StyledRoot = styled.div`
 `;
 
 const GlobalStyles = createGlobalStyle`
-@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 
 body { 
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont,'Inter', 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 html, body, #root {
   height: 100%;
+}
+
+* { 
+  font-family: 'Inter';
 }
 
 code {

@@ -1,14 +1,12 @@
-import { AvatarStyled } from './styled';
+import { AvatarStyled } from './styles';
 import avatar from '../../assets/images/avatar.png';
 
-type AvatarPropsType = {
-  size: string;
+interface IProps  {
+  size: 'large' | 'small';
 };
 
-export const Avatar: React.FC<AvatarPropsType> = ({ size }) => {
+export const Avatar: React.FC<IProps> = (props) => {
   return (
-    <>
-      <AvatarStyled src={avatar} alt="avatar" size={size}/>
-    </>
+    <AvatarStyled src={avatar} alt="avatar" { ...props } />
   );
 };

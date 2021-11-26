@@ -1,9 +1,8 @@
 import { useSelector } from 'react-redux';
 
-import { Time } from '../../../../components/Time/Time';
 import { AppRootStateType } from '../../../../redux/store';
 import { Avatar } from '../../../../components/Avatar/Avatar';
-import { Content, MessageContainer, UserName, Text } from './styles';
+import { Content, MessageContainer, UserName, Text, Time } from './styles';
 
 interface IProps {
   firstName: string;
@@ -25,16 +24,14 @@ const isOwner = userFirstName === firstName && userLastName === lastName;
 
   return (
     <MessageContainer isOwner={isOwner}>
-      { isOwner && <Avatar size="60px" /> }
+      { isOwner && <Avatar size="large" /> }
       <Content isOwner={isOwner}>
         {
           isOwner &&
-          <UserName>
-            {firstName + ' ' + lastName}
-          </UserName>
+          <UserName>{firstName + ' ' + lastName}</UserName>
         }
         <Text isOwner={isOwner}>{message}</Text>
-        <Time time={time} isOwner={isOwner} />
+        <Time isOwner={isOwner}>{time}</Time>
       </Content>
     </MessageContainer>
   );

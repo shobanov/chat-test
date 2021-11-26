@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const FormContainer = styled(Form)`
   width: 100%;
   display: flex;
-  min-height: 69px;
+  height: auto;
   position: fixed;
   bottom: 0;
 `;

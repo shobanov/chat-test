@@ -1,13 +1,11 @@
-import { InputButton } from "./styles";
+import { InputButton } from './styles';
 
-type PropsType = {
-  type?: string; 
+interface IProps {
+  type?: 'submit'; 
 };
 
-export const IconButton: React.FC<PropsType> = ({ type }) => {
+export const IconButton: React.FC<IProps> = (props) => {
   return (
-    <>
-      <InputButton alt="send" type={type}/>
-    </>
+    <InputButton alt="send" { ...props }/>
   );
 };
