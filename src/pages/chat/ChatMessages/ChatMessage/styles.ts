@@ -17,7 +17,7 @@ export const Content = styled.div<IProps>`
   margin-left: 17px;
   border-radius: 9px;
   background-color: ${props => props.isOwner ?
-"#464646" : "#14FF72"};
+"#464646" : "#33CC66"};
   position: relative;
 `;
 
