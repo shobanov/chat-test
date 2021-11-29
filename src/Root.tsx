@@ -1,6 +1,16 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import './assets/fonts/fonts.css';
 
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').then(function(registration) {
+  console.log('Service worker registered:', registration);
+}).catch(function(error) {
+  console.log('Service workers registration error', error);
+});
+} else {
+  console.log('Current browser does not support service workers');
+}
+
 const StyledRoot = styled.div`
   min-height: 100%;
   background-color: #1A1A1A;
