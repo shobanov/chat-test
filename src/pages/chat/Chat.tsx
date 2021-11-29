@@ -18,13 +18,15 @@ export const Chat: React.FC = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values: typeof INITIAL_VALUES, actions: { resetForm: () => void }) => {
-    dispatch(addOwnerMessageAC(values.message));
-    ws.send(JSON.stringify({
-      message: values.message,
-      firstName: userFirstName,
-      lastName: userLastName,
-    }));
-    actions.resetForm();
+    if (values.message) {
+      dispatch(addOwnerMessageAC(values.message));
+      ws.send(JSON.stringify({
+        message: values.message,
+        firstName: userFirstName,
+        lastName: userLastName,
+      }));
+      actions.resetForm();
+    } else actions.resetForm();
   };
 
   return (

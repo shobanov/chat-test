@@ -17,7 +17,7 @@ export const Content = styled.div<IProps>`
   margin-left: 17px;
   border-radius: 9px;
   background-color: ${props => props.isOwner ?
-"#464646" : "#0ebb57"};
+"#464646" : "rgb(20,255,114,0.7)"};
   position: relative;
 `;
 
@@ -25,7 +25,6 @@ export const UserName = styled.p`
   color: #ECECEC;
   font-weight: 700;
   font-size: 20px;
-  margin-top: 10px;
   margin: 10px 10px 5px 16px;
 `;
 
@@ -35,7 +34,7 @@ export const Text = styled.p<IProps>`
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
-  margin: 0 28px 11px 16px;
+  margin: ${props => props.isOwner ? "0 28px 11px 16px" : "11px 28px 11px 16px"};
   word-wrap: break-word;
 `;
 
