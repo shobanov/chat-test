@@ -6,9 +6,7 @@ interface IProps {
 
 export const MessageContainer = styled.div<IProps>`
   display: flex;
-  ${props => props.isOwner ?
-"align-items: flex-end;" :
-"justify-content: end;"};
+  ${props => props.isOwner ? "align-items: flex-end;" : "justify-content: end;"};
   margin: 0 28px 9px 28px;
 `;
 

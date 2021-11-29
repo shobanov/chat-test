@@ -17,10 +17,9 @@ export const Message: React.FC<IProps> = ({
   message,
   time,
 }) => {
-
-const userFirstName = useSelector<AppRootStateType>(state => state.chat.firstName);
-const userLastName = useSelector<AppRootStateType>(state => state.chat.lastName);
-const isOwner = userFirstName === firstName && userLastName === lastName;
+  const userFirstName = useSelector<AppRootStateType>(state => state.chat.firstName);
+  const userLastName = useSelector<AppRootStateType>(state => state.chat.lastName);
+  const isOwner = userFirstName === firstName && userLastName === lastName;
 
   return (
     <MessageContainer isOwner={isOwner}>
@@ -28,7 +27,7 @@ const isOwner = userFirstName === firstName && userLastName === lastName;
       <Content isOwner={isOwner}>
         {
           isOwner &&
-          <UserName>{firstName + ' ' + lastName}</UserName>
+          <UserName>{`${firstName} ${lastName}`}</UserName>
         }
         <Text isOwner={isOwner}>{message}</Text>
         <Time isOwner={isOwner}>{time}</Time>

@@ -7,6 +7,6 @@ interface IProps  {
 
 export const Avatar: React.FC<IProps> = (props) => {
   return (
-    <AvatarStyled src={avatar} alt="avatar" { ...props } />
+    <AvatarStyled src={avatar} { ...props } />
   );
 };

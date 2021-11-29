@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.div`
+export const ChatHeaderContainer = styled.div`
   background-color: #0F0F0F;
   height: 75px;
   position: relative;

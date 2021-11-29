@@ -26,7 +26,7 @@ export const Title = styled.h2`
   font-weight: 300;
 `;
 
-export const FormContainer = styled(Form)`
+export const AuthForm = styled(Form)`
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -36,11 +36,5 @@ export const FormContainer = styled(Form)`
   position: relative;
   & :first-child {
     margin-bottom: 15px;
-  };
-  #firstError {
-    top: 26px;
-  };
-  #secondError {
-    top: 80px;
-  };
+  }
 `;

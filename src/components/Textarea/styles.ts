@@ -14,7 +14,7 @@ export const TextareaStyled = styled.textarea`
   font-weight: 400;
   font-size: 26px;
   padding: 20px 60px 15px 20px;
-  &::placeholder {
+  & ::placeholder {
     color: #D1D1D1;
     font-weight: 300;
   }

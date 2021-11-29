@@ -3,10 +3,10 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { ValidationSchema } from './validation';
-import { NameType, saveNameAC } from '../../redux/chat';
-import { AuthContainer, AuthWrapper, FormContainer, Title } from './styles';
+import { AuthContainer, AuthWrapper, AuthForm, Title } from './styles';
 import { Button } from '../../components/Button/Button';
 import { Input } from '../../components/Input/Input';
+import { NameType, saveNameAC } from '../../redux/chat';
 
 const INITIAL_VALUES = {
   firstName: '',
@@ -27,7 +27,7 @@ export const Auth: React.FC = () => {
       <Formik initialValues={INITIAL_VALUES} onSubmit={handleSubmit} validationSchema={ValidationSchema}>
           <AuthWrapper>
             <Title>Enter your first and last name to enter the chat</Title>
-            <FormContainer>
+            <AuthForm>
               <Input
                 type="text"
                 name="firstName"
@@ -38,8 +38,8 @@ export const Auth: React.FC = () => {
                 name="lastName"
                 placeholder="Last name"
               />
-              <Button type="submit" content="Entry" />
-            </FormContainer>
+              <Button type="submit">Login</Button>
+            </AuthForm>
           </AuthWrapper >
       </Formik >
     </AuthContainer>

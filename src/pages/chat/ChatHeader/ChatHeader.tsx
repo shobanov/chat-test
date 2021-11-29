@@ -2,18 +2,18 @@ import { useSelector } from 'react-redux';
 
 import { Avatar } from '../../../components/Avatar/Avatar';
 import { AppRootStateType } from '../../../redux/store';
-import { UserName, HeaderContainer } from './styles';
+import { UserName, ChatHeaderContainer } from './styles';
 
-export const Header: React.FC = () => {
+export const ChatHeader: React.FC = () => {
   const userFirstName = useSelector<AppRootStateType, string>(state => state.chat.firstName);
   const userLastName = useSelector<AppRootStateType, string>(state => state.chat.lastName);
 
   return (
-    <HeaderContainer>
+    <ChatHeaderContainer>
       <Avatar size="small"/>
       <UserName>
-        {userFirstName + ' ' + userLastName}
+        {`${userFirstName} ${userLastName}`}
       </UserName>
-    </HeaderContainer>
+    </ChatHeaderContainer>
   );
 };

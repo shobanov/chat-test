@@ -20,7 +20,7 @@ export const Textarea: React.FC<IProps> = ({ name }) => {
       textareaRef.current.style.height = scrollHeight + "px";
     }
   }, [textareaRef.current?.textLength]);
-
+  
   return (
     <TextareaStyled
       ref={textareaRef}

@@ -1,5 +1,5 @@
-import { format } from "date-fns";
-import { enUS } from "date-fns/locale";
+import { format } from 'date-fns';
+import { enUS } from 'date-fns/locale';
 
 const initialState: InitialStateType = {
   messages: [],
@@ -8,13 +8,13 @@ const initialState: InitialStateType = {
 };
 
 const getCurrentTime = () => {
-  return (format(new Date(), "HH':'mm a", { locale: enUS }));
+  return format(new Date(), "HH':'mm a", { locale: enUS });
 };
 
 export const chatReducer = (
   state: InitialStateType = initialState,
   action: ActionsType,
-  ): InitialStateType => {
+): InitialStateType => {
   switch (action.type) {
     case 'ADD-OWNER-MESSAGE':
       return {

@@ -2,11 +2,10 @@ import { ButtonStyled } from './styles';
 
 interface IProps  {
   type?: 'submit';
-  content: string;
 };
 
-export const Button: React.FC<IProps> = ({ type, content }) => {
+export const Button: React.FC<IProps> = ({ type, children }) => {
   return (
-    <ButtonStyled type={type}>{content}</ButtonStyled>
+    <ButtonStyled type={type}>{children}</ButtonStyled>
   );
 };

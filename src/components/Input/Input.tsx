@@ -1,22 +1,21 @@
 import { useField } from 'formik';
+
 import { ErrorMessage, InputStyled } from './styles';
 
 interface IProps  {
-  type: 'text';
+  type: 'text' | 'password';
   name: string;
   placeholder: string;
 };
 
-export const Input: React.FC<IProps> = ({ type, name, placeholder }) => {
-  const [field, meta] = useField(name);
+export const Input: React.FC<IProps> = (props) => {
+  const [field, meta] = useField(props.name);
 
   return (
     <>  
       <InputStyled
         { ...field }
-        type={type}
-        name={name}
-        placeholder={placeholder}
+        { ...props }
       />
       {
         meta.error && meta.touched ? (

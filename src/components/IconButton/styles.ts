@@ -1,7 +1,12 @@
 import styled from "styled-components";
 import send from '../../assets/images/send.png';
+import sendFill from '../../assets/images/sendFill.png';
 
-export const InputButton = styled.input`
+interface IProps {
+  hasValue: boolean;
+};
+
+export const InputButton = styled.input<IProps>`
   position: absolute;
   color: transparent;
   cursor: pointer;
@@ -13,5 +18,5 @@ export const InputButton = styled.input`
   outline: none;
   padding: 0;
   background-color: transparent;
-  background-image: url(${send});
+  background-image: url(${props => props.hasValue ? sendFill : send});
 `;
