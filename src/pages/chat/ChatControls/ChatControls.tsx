@@ -14,10 +14,7 @@ export const ChatControls: React.FC = () => {
       submitForm();
     };
   };
-
-  console.log(isValid);
   
-
   return (
     <FormContainer onKeyDown={onMessageSendHandler} >
       <Textarea name="message" />
