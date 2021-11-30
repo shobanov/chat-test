@@ -1,4 +1,4 @@
-import { useField } from 'formik';
+import { useField, useFormikContext } from 'formik';
 import { useEffect, useRef } from 'react';
 
 import { TextareaStyled } from './styles';
@@ -12,6 +12,7 @@ const TEXTAREA_HEIGHT = '69px';
 
 export const Textarea: React.FC<IProps> = ({ name, placeholder = 'Enter text message...' }) => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+  const { values } = useFormikContext();
   const [field] = useField(name);
    
   useEffect(() => {
@@ -20,7 +21,8 @@ export const Textarea: React.FC<IProps> = ({ name, placeholder = 'Enter text mes
       const scrollHeight = textareaRef.current.scrollHeight;
       textareaRef.current.style.height = scrollHeight + "px";
     }
-  }, [textareaRef.current?.textLength]);
+  }, [values]);
+  
   
   return (
     <TextareaStyled
