@@ -2,11 +2,14 @@ import { InputButton } from './styles';
 
 interface IProps {
   type?: 'button' | 'submit';
-  hasValue: boolean;
+  disabled: boolean;
 };
 
-export const IconButton: React.FC<IProps> = ({ type = 'button', hasValue }) => {
+export const IconButton: React.FC<IProps> =({ type = 'button', disabled }) => {
   return (
-    <InputButton type={type} hasValue={hasValue} />
+    <InputButton
+      type={type}
+      disabled={disabled}
+    />
   );
 };

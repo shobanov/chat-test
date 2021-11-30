@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-import { Avatar } from '../../../components/Avatar/Avatar';
+import { Avatar } from '../../../components/Avatar';
 import { AppRootStateType } from '../../../redux/store';
 import { UserName, ChatHeaderContainer } from './styles';
 

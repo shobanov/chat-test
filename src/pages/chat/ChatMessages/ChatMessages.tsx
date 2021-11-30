@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { MessagesContainer } from './styles';
-import { Message } from './ChatMessage/ChatMessage';
+import { ChatMessage } from './ChatMessage';
 import { AppRootStateType } from '../../../redux/store';
 import { addReseivedMessageAC, MessageType } from '../../../redux/chat';
 import { ws } from '../../../api/websocket';
 
-export const Messages: React.FC = () => {
+export const ChatMessages: React.FC = () => {
   const allMessages = useSelector<AppRootStateType, Array<MessageType>>(state => state.chat.messages);
   const dispatch = useDispatch();
 
@@ -19,7 +19,7 @@ export const Messages: React.FC = () => {
       {
         allMessages.map((item, index) => {
           return (
-            <Message
+            <ChatMessage
               key={index}
               { ...item }
             />

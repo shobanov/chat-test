@@ -18,9 +18,9 @@ export const Input: React.FC<IProps> = (props) => {
         { ...props }
       />
       {
-        meta.error && meta.touched ? (
+        meta.error && meta.touched && (
           <ErrorMessage>{meta.error}</ErrorMessage>
-        ) : null
+        )
       }
     </>
   );

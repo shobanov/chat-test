@@ -2,10 +2,10 @@ import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { ValidationSchema } from './validation';
+import { ValidationSchema } from './authValidation';
 import { AuthContainer, AuthWrapper, AuthForm, Title } from './styles';
-import { Button } from '../../components/Button/Button';
-import { Input } from '../../components/Input/Input';
+import { Button } from '../../components/Button';
+import { Input } from '../../components/Input';
 import { NameType, saveNameAC } from '../../redux/chat';
 
 const INITIAL_VALUES = {
@@ -24,23 +24,27 @@ export const Auth: React.FC = () => {
 
   return (
     <AuthContainer>
-      <Formik initialValues={INITIAL_VALUES} onSubmit={handleSubmit} validationSchema={ValidationSchema}>
-          <AuthWrapper>
-            <Title>Enter your first and last name to enter the chat</Title>
-            <AuthForm>
-              <Input
-                type="text"
-                name="firstName"
-                placeholder="First name"
-              />
-              <Input
-                type="text"
-                name="lastName"
-                placeholder="Last name"
-              />
-              <Button type="submit">Login</Button>
-            </AuthForm>
-          </AuthWrapper >
+      <Formik
+        initialValues={INITIAL_VALUES}
+        validationSchema={ValidationSchema}
+        onSubmit={handleSubmit}
+      >
+        <AuthWrapper>
+          <Title>Enter your first and last name to enter the chat</Title>
+          <AuthForm>
+            <Input
+              type="text"
+              name="firstName"
+              placeholder="First name"
+            />
+            <Input
+              type="text"
+              name="lastName"
+              placeholder="Last name"
+            />
+            <Button type="submit">Login</Button>
+          </AuthForm>
+        </AuthWrapper >
       </Formik >
     </AuthContainer>
   );

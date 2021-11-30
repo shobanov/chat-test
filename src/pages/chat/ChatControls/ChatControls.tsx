@@ -1,14 +1,12 @@
-import { useField, useFormikContext } from 'formik';
-import { useEffect, useState } from 'react';
+import { useFormikContext } from 'formik';
 
 import { FormContainer } from './styles';
-import { Textarea } from '../../../components/Textarea/Textarea';
-import { IconButton } from '../../../components/IconButton/IconButton';
+import { Textarea } from '../../../components/Textarea';
+import { IconButton } from '../../../components/IconButton';
 
 export const ChatControls: React.FC = () => {
   const formik = useFormikContext();
-  const [field] = useField("message");
-  const [hasValue, setHasValue] = useState<boolean>(false);
+  const { isValid } = formik;
 
   const onMessageSendHandler = (e: React.KeyboardEvent) => {
     if(e.key === 'Enter' && !e.shiftKey) {
@@ -17,14 +15,10 @@ export const ChatControls: React.FC = () => {
     };
   };
 
-  useEffect(() => {
-    return field.value ? setHasValue(true) : setHasValue(false);
-  },[field.value]);
-    
   return (
     <FormContainer onKeyDown={onMessageSendHandler} >
       <Textarea name="message" />
-      <IconButton type="submit" hasValue={hasValue} />
+      <IconButton type="submit" disabled={!isValid}></IconButton>
     </FormContainer>
   );
 };

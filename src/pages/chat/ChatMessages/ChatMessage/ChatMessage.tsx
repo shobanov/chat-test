@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 
 import { AppRootStateType } from '../../../../redux/store';
-import { Avatar } from '../../../../components/Avatar/Avatar';
+import { Avatar } from '../../../../components/Avatar';
 import { Content, MessageContainer, UserName, Text, Time } from './styles';
 
 interface IProps {
@@ -11,15 +11,15 @@ interface IProps {
   time: string;
 };
 
-export const Message: React.FC<IProps> = ({
+export const ChatMessage: React.FC<IProps> = ({
   firstName,
   lastName,
   message,
   time,
 }) => {
-  const userFirstName = useSelector<AppRootStateType>(state => state.chat.firstName);
-  const userLastName = useSelector<AppRootStateType>(state => state.chat.lastName);
-  const isOwner = userFirstName === firstName && userLastName === lastName;
+  const ownerFirstName = useSelector<AppRootStateType>(state => state.chat.firstName);
+  const ownerLastName = useSelector<AppRootStateType>(state => state.chat.lastName);
+  const isOwner = ownerFirstName === firstName && ownerLastName === lastName;
 
   return (
     <MessageContainer isOwner={isOwner}>

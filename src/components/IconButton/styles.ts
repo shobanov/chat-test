@@ -3,7 +3,7 @@ import send from '../../assets/images/send.png';
 import sendFill from '../../assets/images/sendFill.png';
 
 interface IProps {
-  hasValue: boolean;
+  disabled: boolean;
 };
 
 export const InputButton = styled.input<IProps>`
@@ -18,5 +18,5 @@ export const InputButton = styled.input<IProps>`
   outline: none;
   padding: 0;
   background-color: transparent;
-  background-image: url(${props => props.hasValue ? sendFill : send});
+  background-image: url(${props => props.disabled ? send : sendFill});
 `;

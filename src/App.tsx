@@ -1,7 +1,7 @@
 import { Route, Redirect, Switch } from 'react-router-dom';
 
-import { Auth } from './pages/auth/Auth';
-import { Chat } from './pages/chat/Chat';
+import { Auth } from './pages/auth';
+import { Chat } from './pages/chat';
 import { Root } from './Root';
 
 export const App: React.FC = () => {

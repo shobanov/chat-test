@@ -5,11 +5,12 @@ import { TextareaStyled } from './styles';
 
 interface IProps {
   name: string;
+  placeholder?: string;
 };
 
 const TEXTAREA_HEIGHT = '69px';
 
-export const Textarea: React.FC<IProps> = ({ name }) => {
+export const Textarea: React.FC<IProps> = ({ name, placeholder = 'Enter text message...' }) => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const [field] = useField(name);
    
@@ -26,7 +27,7 @@ export const Textarea: React.FC<IProps> = ({ name }) => {
       ref={textareaRef}
       { ...field }
       name={name}
-      placeholder='Enter text message...'
+      placeholder={placeholder}
     />
   );
 };
