@@ -1,4 +1,4 @@
-[Demo](https://shobanov.github.io/chat-test)
+[Demo](https://shobanov.github.io/chat-test) :point_left:
 # Simple Chat
 To use the chat, you need to open it in two different windows.
 ## Test task:
