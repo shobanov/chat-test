@@ -20,7 +20,7 @@ export const Textarea: React.FC<IProps> = ({ name, placeholder = 'Enter text mes
       textareaRef.current.style.height = TEXTAREA_HEIGHT;
       const scrollHeight = textareaRef.current.scrollHeight;
       textareaRef.current.style.height = scrollHeight + "px";
-    }
+    };
   }, [values]);
   
   return (

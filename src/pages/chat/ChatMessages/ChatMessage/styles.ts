@@ -36,6 +36,7 @@ export const Text = styled.p<IProps>`
   line-height: 24px;
   margin: ${props => props.isOwner ? "0 28px 11px 16px" : "11px 28px 11px 16px"};
   word-break: break-all;
+  white-space: pre-line;
 `;
 
 export const Time = styled.span<IProps>`

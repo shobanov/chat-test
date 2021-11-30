@@ -5,7 +5,7 @@ import { FormContainer } from './styles';
 import { Textarea, IconButton } from '../../../components';
 
 export const ChatControls: React.FC = () => {
-  const { submitForm, dirty } = useFormikContext();
+  const { submitForm, dirty, isValid } = useFormikContext();
 
   const onMessageSendHandler = (e: React.KeyboardEvent) => {
     if(e.key === 'Enter' && !e.shiftKey) {
@@ -17,7 +17,7 @@ export const ChatControls: React.FC = () => {
   return (
     <FormContainer onKeyDown={onMessageSendHandler} >
       <Textarea name="message" />
-      <IconButton type="submit" disabled={!dirty}></IconButton>
+      <IconButton type="submit" disabled={!dirty || !isValid}></IconButton>
     </FormContainer>
   );
 };
