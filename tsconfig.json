@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-, "src/index.tsx", "public/sw.js"  ]
+, "src/index.tsx", "public/service-worker.js"  ]
 }
