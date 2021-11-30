@@ -1,15 +1,19 @@
-import { InputButton } from './styles';
+import { Button, Wrapper } from './styles';
 
-interface IProps {
+import { ReactComponent as Send } from '../../assets/images/send.svg';
+
+interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
   type?: 'button' | 'submit';
-  isValid: boolean;
 };
 
-export const IconButton: React.FC<IProps> =({ type = 'button', isValid }) => {
+export const IconButton: React.FC<IProps> =({ type = 'button', ...props }) => {
   return (
-    <InputButton
-      type={type}
-      disabled={!isValid}
-    />
+    <Wrapper>
+      <Button
+        type={type}
+        {...props}
+      />
+      <Send />
+    </Wrapper>
   );
 };

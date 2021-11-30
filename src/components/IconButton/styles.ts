@@ -1,22 +1,24 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import send from '../../assets/images/send.svg';
-import sendFill from '../../assets/images/sendFill.svg';
+export const Button = styled.input`
+  visibility: hidden;
+  display: none;
+  & ~ svg {
+    fill: #14FF72;
+  }
+  &:disabled {
+    & ~ svg {
+      fill: #9B9B9B;
+    }
+  }
+`;
 
-export const InputButton = styled.input`
+export const Wrapper = styled.label`
   position: absolute;
-  color: transparent;
   cursor: pointer;
   right: 20px;
   bottom: 15px;
   width: 35px;
   height: 35px;
-  border: none;
-  outline: none;
   padding: 0;
-  background-image: url(${sendFill});
-  background-color: transparent;
-  &:disabled {
-    background-image: url(${send});
-  }
 `;

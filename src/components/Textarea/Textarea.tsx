@@ -23,7 +23,6 @@ export const Textarea: React.FC<IProps> = ({ name, placeholder = 'Enter text mes
     }
   }, [values]);
   
-  
   return (
     <TextareaStyled
       ref={textareaRef}

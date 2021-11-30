@@ -5,8 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { AuthContainer, AuthWrapper, AuthForm, Title } from './styles';
 import { ValidationSchema } from './authValidation';
 
-import { Button } from '../../components';
-import { Input } from '../../components';
+import { Button, Input } from '../../components';
 import { NameType, saveNameAC } from '../../redux/chat';
 
 const INITIAL_VALUES = {

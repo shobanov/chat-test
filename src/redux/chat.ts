@@ -24,8 +24,7 @@ export const chatReducer = (
           {
             firstName: state.firstName,
             lastName: state.lastName,
-            message: action.payload.message,
-            time: action.payload.time,
+            ...action.payload
           }
         ]
       };
@@ -34,19 +33,13 @@ export const chatReducer = (
           ...state,
           messages: [
             ...state.messages, 
-            {
-              firstName: action.payload.firstName,
-              lastName: action.payload.lastName,
-              message: action.payload.message,
-              time: action.payload.time,
-            }
+            action.payload
           ]
         };  
     case 'SAVE-NAME':
       return {
         ...state,
-        firstName: action.payload.firstName,
-        lastName: action.payload.lastName,
+        ...action.payload
       }; 
     default:
       return state;    

@@ -1,13 +1,12 @@
 import { Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { ChatHeader } from '../chat';
-import { ChatMessages } from '../chat';
-import { ChatControls } from '../chat';
-import { ws } from '../../api/websocket';
 import { ValidationSchema } from './chatValidation';
+
+import { ChatHeader, ChatMessages, ChatControls } from '../chat';
 import { addOwnerMessageAC } from '../../redux/chat';
 import { AppRootStateType } from '../../redux/store';
+import { ws } from '../../api/websocket';
 
 const INITIAL_VALUES = {
   message: '',
@@ -35,7 +34,6 @@ export const Chat: React.FC = () => {
       <Formik
         initialValues={INITIAL_VALUES}
         validationSchema={ValidationSchema}
-        validateOnMount
         onSubmit={handleSubmit}
       >
         <ChatControls />

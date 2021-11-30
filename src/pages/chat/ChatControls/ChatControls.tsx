@@ -2,11 +2,10 @@ import { useFormikContext } from 'formik';
 
 import { FormContainer } from './styles';
 
-import { Textarea } from '../../../components';
-import { IconButton } from '../../../components';
+import { Textarea, IconButton } from '../../../components';
 
 export const ChatControls: React.FC = () => {
-  const { submitForm, isValid } = useFormikContext();
+  const { submitForm, dirty } = useFormikContext();
 
   const onMessageSendHandler = (e: React.KeyboardEvent) => {
     if(e.key === 'Enter' && !e.shiftKey) {
@@ -14,11 +13,11 @@ export const ChatControls: React.FC = () => {
       submitForm();
     };
   };
-  
+
   return (
     <FormContainer onKeyDown={onMessageSendHandler} >
       <Textarea name="message" />
-      <IconButton type="submit" isValid={isValid}></IconButton>
+      <IconButton type="submit" disabled={!dirty}></IconButton>
     </FormContainer>
   );
 };
