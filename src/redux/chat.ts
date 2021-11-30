@@ -24,8 +24,8 @@ export const chatReducer = (
           {
             firstName: state.firstName,
             lastName: state.lastName,
-            message: action.payload,
-            time: action.time,
+            message: action.payload.message,
+            time: action.payload.time,
           }
         ]
       };
@@ -38,7 +38,7 @@ export const chatReducer = (
               firstName: action.payload.firstName,
               lastName: action.payload.lastName,
               message: action.payload.message,
-              time: action.time,
+              time: action.payload.time,
             }
           ]
         };  
@@ -54,16 +54,14 @@ export const chatReducer = (
 };
 
 // action
-export const addOwnerMessageAC = (payload: string) => ({
+export const addOwnerMessageAC = (message: string) => ({
   type: 'ADD-OWNER-MESSAGE',
-  payload,
-  time: getCurrentTime(),
+  payload: { message, time: getCurrentTime() },
 } as const);
 
 export const addReseivedMessageAC = (payload: MessageType) => ({
   type: 'ADD-RESEIVED-MESSAGE',
-  payload,
-  time: getCurrentTime(),
+  payload: { ...payload, time: getCurrentTime() },
 } as const);
 
 export const saveNameAC = (payload: NameType) => ({

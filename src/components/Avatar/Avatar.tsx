@@ -1,4 +1,5 @@
 import { AvatarStyled } from './styles';
+
 import avatar from '../../assets/images/avatar.png';
 
 interface IProps  {

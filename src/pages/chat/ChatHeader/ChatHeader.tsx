@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux';
 
-import { Avatar } from '../../../components/Avatar';
-import { AppRootStateType } from '../../../redux/store';
 import { UserName, ChatHeaderContainer } from './styles';
+
+import { AppRootStateType } from '../../../redux/store';
+import { Avatar } from '../../../components';
 
 export const ChatHeader: React.FC = () => {
   const userFirstName = useSelector<AppRootStateType, string>(state => state.chat.firstName);

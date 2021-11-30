@@ -2,10 +2,11 @@ import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { ValidationSchema } from './authValidation';
 import { AuthContainer, AuthWrapper, AuthForm, Title } from './styles';
-import { Button } from '../../components/Button';
-import { Input } from '../../components/Input';
+import { ValidationSchema } from './authValidation';
+
+import { Button } from '../../components';
+import { Input } from '../../components';
 import { NameType, saveNameAC } from '../../redux/chat';
 
 const INITIAL_VALUES = {

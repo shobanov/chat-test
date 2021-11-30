@@ -1,12 +1,9 @@
 import styled from "styled-components";
-import send from '../../assets/images/send.png';
-import sendFill from '../../assets/images/sendFill.png';
 
-interface IProps {
-  disabled: boolean;
-};
+import send from '../../assets/images/send.svg';
+import sendFill from '../../assets/images/sendFill.svg';
 
-export const InputButton = styled.input<IProps>`
+export const InputButton = styled.input`
   position: absolute;
   color: transparent;
   cursor: pointer;
@@ -17,6 +14,9 @@ export const InputButton = styled.input<IProps>`
   border: none;
   outline: none;
   padding: 0;
+  background-image: url(${sendFill});
   background-color: transparent;
-  background-image: url(${props => props.disabled ? send : sendFill});
+  &:disabled {
+    background-image: url(${send});
+  }
 `;

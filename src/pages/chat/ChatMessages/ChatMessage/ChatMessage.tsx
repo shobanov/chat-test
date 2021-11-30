@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux';
 
-import { AppRootStateType } from '../../../../redux/store';
-import { Avatar } from '../../../../components/Avatar';
 import { Content, MessageContainer, UserName, Text, Time } from './styles';
+
+import { AppRootStateType } from '../../../../redux/store';
+import { Avatar } from '../../../../components';
 
 interface IProps {
   firstName: string;
