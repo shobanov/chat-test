@@ -1,23 +1,25 @@
 {
   "files": {
     "main.css": "/chat-test/static/css/main.771992c0.chunk.css",
-    "main.js": "/chat-test/static/js/main.ebc880c1.chunk.js",
-    "main.js.map": "/chat-test/static/js/main.ebc880c1.chunk.js.map",
+    "main.js": "/chat-test/static/js/main.d8ea6510.chunk.js",
+    "main.js.map": "/chat-test/static/js/main.d8ea6510.chunk.js.map",
     "runtime-main.js": "/chat-test/static/js/runtime-main.1bd9b42e.js",
     "runtime-main.js.map": "/chat-test/static/js/runtime-main.1bd9b42e.js.map",
-    "static/js/2.e5146aac.chunk.js": "/chat-test/static/js/2.e5146aac.chunk.js",
-    "static/js/2.e5146aac.chunk.js.map": "/chat-test/static/js/2.e5146aac.chunk.js.map",
+    "static/js/2.ee9ed720.chunk.js": "/chat-test/static/js/2.ee9ed720.chunk.js",
+    "static/js/2.ee9ed720.chunk.js.map": "/chat-test/static/js/2.ee9ed720.chunk.js.map",
     "static/js/3.4b952d11.chunk.js": "/chat-test/static/js/3.4b952d11.chunk.js",
     "static/js/3.4b952d11.chunk.js.map": "/chat-test/static/js/3.4b952d11.chunk.js.map",
     "index.html": "/chat-test/index.html",
     "static/css/main.771992c0.chunk.css.map": "/chat-test/static/css/main.771992c0.chunk.css.map",
-    "static/js/2.e5146aac.chunk.js.LICENSE.txt": "/chat-test/static/js/2.e5146aac.chunk.js.LICENSE.txt",
-    "static/media/fonts.css": "/chat-test/static/media/semiBold.d282344a.eot"
+    "static/js/2.ee9ed720.chunk.js.LICENSE.txt": "/chat-test/static/js/2.ee9ed720.chunk.js.LICENSE.txt",
+    "static/media/fonts.css": "/chat-test/static/media/semiBold.d282344a.eot",
+    "static/media/send.7fb78605.svg": "/chat-test/static/media/send.7fb78605.svg",
+    "static/media/sendFill.735bf47a.svg": "/chat-test/static/media/sendFill.735bf47a.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.1bd9b42e.js",
-    "static/js/2.e5146aac.chunk.js",
+    "static/js/2.ee9ed720.chunk.js",
     "static/css/main.771992c0.chunk.css",
-    "static/js/main.ebc880c1.chunk.js"
+    "static/js/main.d8ea6510.chunk.js"
   ]
 }
